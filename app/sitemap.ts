@@ -3,8 +3,8 @@ import { getAllPosts } from '@/lib/posts';
 import { CATEGORY_IDS } from '@/lib/categories';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://blog-7xx.pages.dev';
-  
+  const baseUrl = 'https://kimyido.com';
+
   // 기본 페이지들
   const routes: MetadataRoute.Sitemap = [
     {
@@ -56,5 +56,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...routes, ...categoryRoutes, ...postRoutes];
+  // 태그 페이지들 - 중복 제거하여 고유한 태그만 추출
+  const allTags = posts.reduce((tags: string[], post) => {
+    post.tags.forEach(tag => {
+      if (!tags.includes(tag)) {
+        tags.push(tag);
+      }
+    });
+    return tags;
+  }, []);
+
+  const tagRoutes: MetadataRoute.Sitemap = allTags.map((tag) => ({
+    url: `${baseUrl}/tag/${encodeURIComponent(tag)}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
+  return [...routes, ...categoryRoutes, ...postRoutes, ...tagRoutes];
 }
