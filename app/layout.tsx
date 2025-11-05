@@ -6,22 +6,51 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "내 블로그 | SEO 최적화 블로그",
-  description: "고품질 콘텐츠를 제공하는 블로그입니다. 최신 정보와 유용한 팁을 공유합니다.",
-  keywords: ["블로그", "SEO", "마케팅", "정보", "팁"],
-  authors: [{ name: "블로거" }],
+  metadataBase: new URL('https://kimyido.com'),
+  title: {
+    default: "kimyido.com - 기술, 재테크, 라이프스타일 블로그",
+    template: "%s | kimyido.com",
+  },
+  description: "기술, 재테크, 건강, 라이프스타일 등 다양한 주제의 실용적인 정보를 공유하는 블로그입니다. Next.js, 구글 애드센스, 투자, 자기계발 등 유용한 가이드를 제공합니다.",
+  keywords: ["블로그", "기술", "재테크", "건강", "라이프스타일", "Next.js", "애드센스", "SEO", "웹개발", "투자"],
+  authors: [{ name: "kimyido" }],
+  creator: "kimyido",
+  publisher: "kimyido",
   openGraph: {
-    title: "내 블로그",
-    description: "고품질 콘텐츠를 제공하는 블로그",
     type: "website",
     locale: "ko_KR",
+    url: "https://kimyido.com",
+    siteName: "kimyido.com",
+    title: "kimyido.com - 기술, 재테크, 라이프스타일 블로그",
+    description: "기술, 재테크, 건강, 라이프스타일 등 다양한 주제의 실용적인 정보를 공유하는 블로그",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "kimyido.com 블로그",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "kimyido.com - 기술, 재테크, 라이프스타일 블로그",
+    description: "기술, 재테크, 건강, 라이프스타일 등 다양한 주제의 실용적인 정보",
+    creator: "@kimyido",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "bZaLS8-6gkMxqIfr5AN903X50Pw6ZNVWTjfycZB12vE",
   },
 };
 
