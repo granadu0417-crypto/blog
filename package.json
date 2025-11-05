@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-post": "ts-node --project tsconfig.json scripts/generate-post.ts"
   },
   "dependencies": {
     "next": "14.2.0",
@@ -25,6 +26,7 @@
     "eslint-config-next": "14.2.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ts-node": "^10.9.2"
   }
 }
