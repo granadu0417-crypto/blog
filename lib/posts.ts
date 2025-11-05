@@ -205,8 +205,17 @@ export function getRelatedPosts(currentPost: Post, limit: number = 3): Post[] {
     post.tags.some(tag => currentPost.tags.includes(tag))
   );
 
-  // 중복 제거 및 병합
-  const relatedPosts = [...new Set([...sameCategoryPosts, ...sameTagPosts])];
+  // 중복 제거 및 병합 (Array.from 사용)
+  const combinedPosts = sameCategoryPosts.concat(sameTagPosts);
+  const uniqueSlugs = new Set<string>();
+  const relatedPosts: Post[] = [];
+  
+  for (const post of combinedPosts) {
+    if (!uniqueSlugs.has(post.slug)) {
+      uniqueSlugs.add(post.slug);
+      relatedPosts.push(post);
+    }
+  }
   
   return relatedPosts.slice(0, limit);
 }
