@@ -1,11 +1,14 @@
 import { getPostBySlug, getAllPostSlugs } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import LikeButton from '@/components/LikeButton';
 import ShareButtons from '@/components/ShareButtons';
+import TableOfContents from '@/components/TableOfContents';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -53,7 +56,9 @@ export default async function PostPage({
   }
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeStringify)
     .process(post.content);
   const contentHtml = processedContent.toString();
 
@@ -86,6 +91,9 @@ export default async function PostPage({
           <span className="text-6xl">{post.coverImage}</span>
         </div>
       )}
+
+      {/* 목차 */}
+      <TableOfContents content={post.content} />
 
       {/* 본문 */}
       <div
