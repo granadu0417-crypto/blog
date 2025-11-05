@@ -98,7 +98,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">연락처</h3>
                 <p className="text-gray-600">
-                  이메일: contact@myblog.com
+                  이메일: granadu0417@gmail.com
                 </p>
               </div>
             </div>

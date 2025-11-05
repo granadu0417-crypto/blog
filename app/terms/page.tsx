@@ -123,7 +123,7 @@ export default function TermsPage() {
           </p>
           <div className="bg-blue-50 p-6 rounded-lg">
             <p className="text-gray-700">
-              <strong>이메일:</strong> contact@myblog.com<br />
+              <strong>이메일:</strong> granadu0417@gmail.com<br />
               <strong>담당자:</strong> 고객지원팀
             </p>
           </div>

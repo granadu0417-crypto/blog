@@ -117,7 +117,7 @@ export default function PrivacyPage() {
           </p>
           <div className="bg-blue-50 p-6 rounded-lg">
             <p className="text-gray-700">
-              <strong>이메일:</strong> privacy@myblog.com<br />
+              <strong>이메일:</strong> granadu0417@gmail.com<br />
               <strong>담당자:</strong> 개인정보 보호책임자
             </p>
           </div>

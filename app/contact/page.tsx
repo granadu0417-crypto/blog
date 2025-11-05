@@ -25,7 +25,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-bold mb-1">이메일</h3>
-                <p className="text-gray-600">contact@myblog.com</p>
+                <p className="text-gray-600">granadu0417@gmail.com</p>
               </div>
             </div>
             
