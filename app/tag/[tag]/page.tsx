@@ -9,11 +9,14 @@ interface TagPageProps {
   };
 }
 
+// 동적 경로 허용 (빌드 시점에 없는 태그도 런타임에 생성)
+export const dynamicParams = true;
+
 // 정적 경로 생성
 export async function generateStaticParams() {
   const tags = getAllTags();
   return tags.map((tag) => ({
-    tag: encodeURIComponent(tag),
+    tag: tag, // Next.js가 자동으로 URL 인코딩 처리
   }));
 }
 
