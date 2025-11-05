@@ -11,6 +11,8 @@ readTime: 15
 
 # Next.js와 Markdown으로 블로그 만들기 완벽 가이드
 
+![Next.js와 Markdown으로 블로그 만들기](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=630)
+
 > **💡 핵심 요약**: Next.js 14 + Markdown으로 Lighthouse 98점, 월 100만원 수익 가능한 초고속 SEO 블로그를 만드는 완벽 가이드
 
 ---

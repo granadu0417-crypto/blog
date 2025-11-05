@@ -10,6 +10,8 @@ author: "블로그 관리자"
 
 # Cloudflare Pages로 무료 블로그 배포하기 - 2025년 완벽 가이드
 
+![Cloudflare Pages 배포 가이드](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200)
+
 > **💡 핵심 요약**: GitHub 연동만으로 자동 배포・무제한 대역폭・전세계 CDN을 100% 무료로 사용하는 방법
 
 ---
