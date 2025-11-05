@@ -9,6 +9,7 @@ import Link from 'next/link';
 import LikeButton from '@/components/LikeButton';
 import ShareButtons from '@/components/ShareButtons';
 import TableOfContents from '@/components/TableOfContents';
+import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredData';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -62,8 +63,31 @@ export default async function PostPage({
     .process(post.content);
   const contentHtml = processedContent.toString();
 
+  const baseUrl = 'https://kimyido.com';
+  const postUrl = `${baseUrl}/posts/${params.slug}`;
+
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* 구조화된 데이터 마크업 */}
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        url={postUrl}
+        datePublished={post.date}
+        dateModified={post.date}
+        author="kimyido"
+        category={post.category}
+        tags={post.tags}
+        imageUrl={post.imageUrl}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: '홈', url: baseUrl },
+          { name: post.category, url: `${baseUrl}/category/${post.category}` },
+          { name: post.title, url: postUrl },
+        ]}
+      />
+
       {/* 헤더 */}
       <header className="mb-8">
         <div className="flex flex-wrap gap-2 mb-4">

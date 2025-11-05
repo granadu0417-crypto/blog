@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { WebSiteSchema } from "@/components/StructuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -62,6 +63,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
+        <WebSiteSchema
+          url="https://kimyido.com"
+          name="kimyido.com - 기술, 재테크, 라이프스타일 블로그"
+          description="기술, 재테크, 건강, 라이프스타일 등 다양한 주제의 실용적인 정보를 공유하는 블로그"
+        />
         <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
