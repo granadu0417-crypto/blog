@@ -1,6 +1,12 @@
 // Cloudflare Pages Functions - 좋아요 API
 // 자동 엔드포인트: /api/likes/[slug]
 
+// Cloudflare KV 타입 정의
+interface KVNamespace {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+}
+
 interface Env {
   BLOG_LIKES: KVNamespace;
 }
