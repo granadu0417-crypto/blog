@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 import { CATEGORY_LIST, getCategoryById, getCategoryColorClass } from '@/lib/categories';
+import { LikeCount } from '@/components/LikeButton';
 
 export default function Home() {
   const posts = getAllPosts();
@@ -144,24 +145,28 @@ export default function Home() {
                     {post.tags.length > 0 && (
                       <div className="flex flex-wrap gap-2 mb-4">
                         {post.tags.slice(0, 3).map((tag) => (
-                          <span 
+                          <Link
                             key={tag}
-                            className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded"
+                            href={`/tag/${encodeURIComponent(tag)}`}
+                            className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-blue-100 hover:text-blue-700 transition"
                           >
                             #{tag}
-                          </span>
+                          </Link>
                         ))}
                       </div>
                     )}
 
                     {/* 메타 정보 */}
                     <div className="flex items-center justify-between text-sm text-gray-500">
-                      <span>{post.date}</span>
+                      <div className="flex items-center gap-3">
+                        <span>{post.date}</span>
+                        <LikeCount slug={post.slug} />
+                      </div>
                       <div className="flex items-center gap-3">
                         {post.readTime && (
                           <span>{post.readTime}분</span>
                         )}
-                        <Link 
+                        <Link
                           href={`/posts/${post.slug}`}
                           className="text-blue-600 hover:text-blue-800 font-medium"
                         >
@@ -185,12 +190,13 @@ export default function Home() {
             {Array.from(new Set(posts.flatMap(post => post.tags)))
               .slice(0, 15)
               .map((tag) => (
-                <span 
+                <Link
                   key={tag}
-                  className="bg-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-50 transition cursor-pointer border border-gray-200"
+                  href={`/tag/${encodeURIComponent(tag)}`}
+                  className="bg-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-50 hover:text-blue-600 transition cursor-pointer border border-gray-200"
                 >
                   #{tag}
-                </span>
+                </Link>
               ))}
           </div>
         </section>

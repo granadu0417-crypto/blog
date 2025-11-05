@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import { remark } from 'remark';
 import html from 'remark-html';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import LikeButton from '@/components/LikeButton';
+import ShareButtons from '@/components/ShareButtons';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -60,12 +63,13 @@ export default async function PostPage({
       <header className="mb-8">
         <div className="flex flex-wrap gap-2 mb-4">
           {post.tags.map((tag) => (
-            <span 
+            <Link
               key={tag}
-              className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full"
+              href={`/tag/${encodeURIComponent(tag)}`}
+              className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full hover:bg-blue-200 transition"
             >
               #{tag}
-            </span>
+            </Link>
           ))}
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -84,23 +88,18 @@ export default async function PostPage({
       )}
 
       {/* 본문 */}
-      <div 
+      <div
         className="prose prose-lg max-w-none mb-12"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
 
-      {/* 공유 버튼 */}
-      <div className="border-t pt-8">
-        <h3 className="text-xl font-bold mb-4">이 글을 공유하세요</h3>
-        <div className="flex gap-4">
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-            트위터로 공유
-          </button>
-          <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
-            카카오톡 공유
-          </button>
-        </div>
+      {/* 좋아요 버튼 */}
+      <div className="flex justify-center mb-8">
+        <LikeButton slug={post.slug} />
       </div>
+
+      {/* 공유 버튼 */}
+      <ShareButtons title={post.title} slug={post.slug} />
     </article>
   );
 }
