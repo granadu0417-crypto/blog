@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "review"
 tags: ["구독", "리뷰", "비교", "넷플릭스", "유튜브프리미엄", "절약"]
 excerpt: "넷플릭스, 유튜브 프리미엄, 멜론, 밀리의서재... 넘쳐나는 구독 서비스, 어떻게 선택할까? 가격 비교부터 가족 공유 꿀팁까지, 한 달 구독료 50% 절약하는 완벽 가이드."
-imageUrl: "/images/subscription-service-complete-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200"
 ---
 
 # 구독 서비스 완벽 가이드

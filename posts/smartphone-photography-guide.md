@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "hobby"
 tags: ["사진", "취미", "스마트폰", "촬영", "편집", "인스타그램"]
 excerpt: "비싼 카메라 없이도 스마트폰으로 멋진 사진을! 구도, 조명, 편집까지 인생샷 찍는 모든 비법. 초보자도 따라하면 바로 SNS 인기 폭발!"
-imageUrl: "/images/smartphone-photography-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200"
 ---
 
 # 스마트폰 사진 촬영 완벽 가이드

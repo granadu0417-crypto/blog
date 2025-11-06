@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "education"
 tags: ["영어", "학습", "자기계발", "교육", "영어회화", "독학"]
 excerpt: "학원 없이 혼자서도 영어 마스터! 듣기, 말하기, 읽기, 쓰기 4가지 영역 완벽 공략. 무료 자료와 효율적인 학습법으로 6개월 만에 실전 영어 실력 향상."
-imageUrl: "/images/self-study-english-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=1200"
 ---
 
 # 영어 공부 혼자하기 완벽 가이드

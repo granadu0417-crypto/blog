@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "shopping"
 tags: ["가성비", "추천", "리뷰", "필수품", "생활용품", "전자제품"]
 excerpt: "비싸다고 다 좋은 건 아니다! 10만원대 무선 이어폰, 3만원대 텀블러, 만원대 충전기까지. 실사용 후기 기반 가성비 제품 30선. 불필요한 지출 없이 똑똑한 소비."
-imageUrl: "/images/budget-friendly-products-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200"
 ---
 
 # 가성비 제품 추천 완벽 가이드

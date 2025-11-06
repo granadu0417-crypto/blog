@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "education"
 tags: ["온라인강의", "교육", "학습", "자기계발", "유데미", "인프런"]
 excerpt: "수강만 하고 끝? 이제는 제대로 활용하자! 유데미, 코세라, 인프런 등 온라인 강의 플랫폼 200% 활용법. 완강률 10%에서 90%로, 학습 효율 3배 증가 비법 공개."
-imageUrl: "/images/online-course-mastery-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200"
 ---
 
 # 온라인 강의 100% 활용 완벽 가이드

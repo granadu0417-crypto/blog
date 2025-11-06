@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "trends"
 tags: ["2025트렌드", "라이프스타일", "소비트렌드", "기술트렌드", "트렌드분석", "미래예측"]
 excerpt: "2025년 우리 삶을 바꿀 10가지 트렌드를 미리 알아보세요. 기술, 소비, 라이프스타일의 변화를 한눈에!"
-imageUrl: "/images/2025-trend-predictions.jpg"
+imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200"
 ---
 
 # 2025년 주목해야 할 트렌드 TOP 10

@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "shopping"
 tags: ["쇼핑", "절약", "할인", "직구", "쿠팡", "알리익스프레스"]
 excerpt: "같은 제품을 50% 저렴하게! 온라인 쇼핑의 모든 것. 최저가 찾기, 할인 쿠폰, 직구 노하우, 사기 피하는 법까지. 연간 100만원 절약하는 쇼핑 꿀팁 대방출."
-imageUrl: "/images/smart-online-shopping-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200"
 ---
 
 # 온라인 쇼핑 똑똑하게 하는 법

@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "real-estate"
 tags: ["인테리어", "셀프인테리어", "원룸", "투룸", "공간활용", "소형평수"]
 excerpt: "좁은 원룸·투룸도 인테리어로 넓고 쾌적하게! 저렴한 비용으로 할 수 있는 셀프 인테리어 완벽 가이드입니다."
-imageUrl: "/images/rental-interior-design-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200"
 ---
 
 # 원룸·투룸 셀프 인테리어 가이드

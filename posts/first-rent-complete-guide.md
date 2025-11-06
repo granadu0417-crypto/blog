@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "real-estate"
 tags: ["전세", "월세", "부동산", "계약", "체크리스트", "주의사항"]
 excerpt: "처음 독립하는 사회 초년생을 위한 완벽 가이드. 매물 찾기부터 계약서 작성, 사기 피하는 법까지. 10년 차 부동산 전문가가 알려주는 실전 노하우."
-imageUrl: "/images/first-rent-complete-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200"
 ---
 
 # 첫 전세/월세 완벽 가이드

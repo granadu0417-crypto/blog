@@ -4,7 +4,7 @@ date: "2025-01-06"
 category: "hobby"
 tags: ["독서", "취미", "자기계발", "습관", "책추천", "독서법"]
 excerpt: "작심삼일로 끝나는 독서, 이제는 평생 습관으로! 하루 10분부터 시작하는 독서 습관 만들기. 책 고르는 법부터 꾸준히 읽는 노하우까지 완벽 정리."
-imageUrl: "/images/reading-habit-guide.jpg"
+imageUrl: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200"
 ---
 
 # 독서 습관 만들기 완벽 가이드
