@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPostsByCategory, getAllPosts } from '@/lib/posts';
 import { getCategoryById, CATEGORY_IDS, getCategoryColorClass } from '@/lib/categories';
 import { notFound } from 'next/navigation';
@@ -121,11 +122,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               >
                 {/* 이미지 영역 */}
                 {post.imageUrl ? (
-                  <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={post.imageUrl} 
+                  <div className="aspect-video overflow-hidden relative">
+                    <Image
+                      src={post.imageUrl}
                       alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                 ) : post.coverImage ? (

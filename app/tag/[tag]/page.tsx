@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getPostsByTag, getAllTags, getAllPosts } from '@/lib/posts';
 import { getCategoryById, getCategoryColorClass } from '@/lib/categories';
 import type { Metadata } from 'next';
@@ -118,11 +119,14 @@ export default function TagPage({ params }: TagPageProps) {
               >
                 {/* 이미지 영역 */}
                 {post.imageUrl ? (
-                  <div className="aspect-video overflow-hidden">
-                    <img
+                  <div className="aspect-video overflow-hidden relative">
+                    <Image
                       src={post.imageUrl}
                       alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                 ) : post.coverImage ? (
