@@ -25,13 +25,13 @@
 - [x] 한글 폰트 최적화 (Noto Sans KR, font-display: swap)
 
 ### 콘텐츠
-- [x] **26개 게시글** 작성 완료
-  - finance (금융/투자): 3개
+- [x] **34개 게시글** 작성 완료 (AdSense 승인 준비 완료!)
+  - finance (금융/투자): 5개 ⬆️
   - tech (IT/테크): 4개
-  - health (건강/웰빙): 2개
-  - realestate (부동산/인테리어): 2개
-  - education (교육/자기계발): 3개
-  - lifestyle (생활정보): 2개
+  - health (건강/웰빙): 4개 ⬆️
+  - realestate (부동산/인테리어): 3개 ⬆️
+  - education (교육/자기계발): 5개 ⬆️
+  - lifestyle (생활정보): 3개 ⬆️
   - travel (여행/맛집): 2개
   - hobby (취미/라이프스타일): 4개
   - shopping (쇼핑/리뷰): 3개
@@ -46,16 +46,16 @@
 
 ## 진행 중 🔄
 
-### AdSense 승인 대기
-- 현재: 26개 게시글
-- 목표: 30-40개 게시글 권장
-- 상태: 추가 콘텐츠 작성 필요
+### AdSense 승인 준비 완료! ✅
+- 현재: **34개 게시글**
+- 목표: 30-40개 게시글 권장 ✅ 달성
+- 상태: **AdSense 신청 가능**
 
 ## 다음 할 일 📋
 
-### 우선순위 1: AdSense 승인 준비
-- [ ] **추가 게시글 4-14개 작성 (목표: 30-40개)** ← 다음 작업
-- [ ] AdSense 신청
+### 우선순위 1: AdSense 신청
+- [x] 추가 게시글 작성 (34개 완료)
+- [ ] **AdSense 신청하기** ← 다음 작업
 
 ### 우선순위 2: 트래픽 증대
 - [ ] 소셜 미디어 공유 시작
@@ -98,6 +98,21 @@ categories.ts에 정의된 ID 사용 필수:
 2. **카테고리 페이지 글 안 보임**
    - 원인: 카테고리 ID 불일치 (`real-estate`, `trends`)
    - 해결: categories.ts 정의와 일치하도록 수정 (`realestate`, `trend`)
+
+3. **성능 최적화 완료**
+   - Next.js Image 컴포넌트 적용 (lazy loading, responsive sizes)
+   - 한글 폰트 최적화 (Noto Sans KR, font-display: swap)
+   - 페이지 로딩 속도 개선
+
+4. **8개 추가 게시글 작성 완료 (총 34개)**
+   - finance: ETF 투자, 연말정산
+   - health: 수면 습관, 눈 건강
+   - education: 영어 회화, 시간 관리
+   - realestate: 부동산 투자
+   - lifestyle: 미니멀 라이프
+   - 모든 게시글 5,000자 이상 고품질 콘텐츠
+   - 할루레이션 방지, 검증된 정보만 사용
+   - 면책 조항 포함
 
 ## 메모 📝
 
