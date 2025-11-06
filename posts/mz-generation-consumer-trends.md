@@ -1,7 +1,7 @@
 ---
 title: "MZ세대가 이끄는 새로운 소비 트렌드 - 가치소비의 시대"
 date: "2025-01-06"
-category: "trends"
+category: "trend"
 tags: ["MZ세대", "소비트렌드", "가치소비", "밀레니얼", "Z세대", "소비문화"]
 excerpt: "MZ세대의 소비 패턴을 분석하고 그들이 만들어가는 새로운 소비 문화를 살펴봅니다. 플렉스부터 가치소비까지!"
 imageUrl: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200"

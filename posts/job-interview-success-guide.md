@@ -1,7 +1,7 @@
 ---
 title: "면접 합격 완벽 가이드: 면접관이 알려주는 합격 비법"
 date: "2025-01-10"
-category: "career"
+category: "education"
 tags: ["면접", "취업", "이직", "면접준비", "커리어"]
 excerpt: "면접관 출신이 알려주는 면접 합격 노하우! 자기소개부터 예상 질문 답변, 복장까지 면접의 모든 것을 담았습니다. 이 가이드 하나면 면접 준비 끝!"
 imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200"

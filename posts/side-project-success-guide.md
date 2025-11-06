@@ -1,7 +1,7 @@
 ---
 title: "N잡러 되기: 직장인 부업으로 월 100만원 벌기"
 date: "2025-01-10"
-category: "career"
+category: "finance"
 tags: ["부업", "N잡", "사이드프로젝트", "투잡", "추가수입"]
 excerpt: "월급만으로는 부족하다면? 직장인도 할 수 있는 부업 10가지를 소개합니다. 퇴근 후 2시간 투자로 월 100만원 추가 수입을 만드는 실전 가이드!"
 imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200"

@@ -1,7 +1,7 @@
 ---
 title: "생산성 앱 완벽 가이드 - Notion부터 Todoist까지"
 date: "2025-01-06"
-category: "review"
+category: "tech"
 tags: ["생산성", "앱", "리뷰", "Notion", "Todoist", "효율"]
 excerpt: "Notion, Obsidian, Todoist... 생산성 앱 정글에서 길을 잃으셨나요? 용도별 최적 앱 추천부터 실전 활용법까지. 업무 효율 200% 향상시키는 생산성 도구 완벽 가이드."
 imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200"

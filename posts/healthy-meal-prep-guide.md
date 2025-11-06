@@ -1,7 +1,7 @@
 ---
 title: "식단 관리 완벽 가이드: 직장인을 위한 주간 도시락 준비"
 date: "2025-01-09"
-category: "food"
+category: "hobby"
 tags: ["식단관리", "도시락", "건강식", "밀프렙", "다이어트"]
 excerpt: "주말 2시간 투자로 일주일 식사 준비 완료! 건강하게 먹으면서 월 20만원 절약하는 밀프렙(Meal Prep) 완벽 가이드입니다."
 imageUrl: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200"
