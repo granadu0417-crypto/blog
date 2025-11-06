@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_KR } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
 import { WebSiteSchema } from "@/components/StructuredData";
@@ -74,6 +75,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${inter.variable} ${notoSansKR.variable}`}>
       <body className="font-sans antialiased">
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3591490977493759"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <WebSiteSchema
           url="https://kimyido.com"
           name="kimyido.com - 기술, 재테크, 라이프스타일 블로그"
