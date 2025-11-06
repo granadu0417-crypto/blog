@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-noto-sans-kr)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
       typography: {
         DEFAULT: {
           css: {
