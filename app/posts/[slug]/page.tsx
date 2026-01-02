@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPostSlugs } from '@/lib/posts';
+import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
@@ -12,6 +12,7 @@ import TableOfContents from '@/components/TableOfContents';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import InArticleAd from '@/components/InArticleAd';
 import MultiplexAd from '@/components/MultiplexAd';
+import RelatedPosts from '@/components/RelatedPosts';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -67,6 +68,9 @@ export default async function PostPage({
 
   const baseUrl = 'https://kimyido.com';
   const postUrl = `${baseUrl}/posts/${params.slug}`;
+
+  // 관련 글 가져오기
+  const relatedPosts = getRelatedPosts(post, 6);
 
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -140,6 +144,9 @@ export default async function PostPage({
 
       {/* 공유 버튼 */}
       <ShareButtons title={post.title} slug={post.slug} />
+
+      {/* 관련 글 추천 */}
+      <RelatedPosts posts={relatedPosts} />
     </article>
   );
 }
