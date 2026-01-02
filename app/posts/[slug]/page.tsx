@@ -10,6 +10,8 @@ import LikeButton from '@/components/LikeButton';
 import ShareButtons from '@/components/ShareButtons';
 import TableOfContents from '@/components/TableOfContents';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredData';
+import InArticleAd from '@/components/InArticleAd';
+import MultiplexAd from '@/components/MultiplexAd';
 
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -119,11 +121,17 @@ export default async function PostPage({
       {/* 목차 */}
       <TableOfContents content={post.content} />
 
+      {/* 광고 - 본문 상단 */}
+      <InArticleAd />
+
       {/* 본문 */}
       <div
         className="prose prose-lg max-w-none mb-12"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
+
+      {/* 광고 - 관련 콘텐츠 스타일 */}
+      <MultiplexAd />
 
       {/* 좋아요 버튼 */}
       <div className="flex justify-center mb-8">

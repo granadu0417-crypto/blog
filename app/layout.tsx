@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
 import { WebSiteSchema } from "@/components/StructuredData";
+import DisplayAd from "@/components/DisplayAd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -114,6 +115,10 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
+        {/* 상단 디스플레이 광고 */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+          <DisplayAd />
+        </div>
         <main className="min-h-screen">
           {children}
         </main>
