@@ -27,11 +27,18 @@ export default function RelatedPosts({ posts, title = '함께 보면 좋은 글'
             className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             {/* 썸네일 영역 */}
-            <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-              {post.coverImage ? (
-                <span className="text-4xl">{post.coverImage}</span>
+            <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+              {post.imageUrl ? (
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
               ) : (
-                <span className="text-4xl">📝</span>
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-4xl">📝</span>
+                </div>
               )}
             </div>
 

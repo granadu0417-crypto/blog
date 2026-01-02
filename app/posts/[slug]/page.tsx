@@ -116,9 +116,14 @@ export default async function PostPage({
       </header>
 
       {/* 커버 이미지 */}
-      {post.coverImage && (
-        <div className="mb-8 aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center">
-          <span className="text-6xl">{post.coverImage}</span>
+      {post.imageUrl && (
+        <div className="mb-8 aspect-video relative rounded-lg overflow-hidden">
+          <img
+            src={post.imageUrl}
+            alt={post.title}
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
         </div>
       )}
 
