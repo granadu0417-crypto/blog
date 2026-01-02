@@ -2,7 +2,7 @@
 title: "K패스 신청 방법 총정리, 2026년 대중교통비 환급 받는 법"
 date: "2026-01-02"
 excerpt: "K패스 신청 방법과 환급 혜택을 완벽하게 정리했습니다. 대중교통비 최대 53% 환급받는 방법부터 카드 발급, 사용법까지 2026년 최신 정보를 확인하세요."
-category: "life"
+category: "lifestyle"
 tags: ["K패스", "대중교통", "교통비환급", "K패스신청", "알뜰교통카드", "교통카드", "대중교통할인", "K패스카드", "교통비절약", "2026K패스"]
 imageUrl: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200"
 author: "kimyido"

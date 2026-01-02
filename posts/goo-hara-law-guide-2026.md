@@ -2,7 +2,7 @@
 title: "구하라법 뜻과 내용 총정리, 2026년 시행 상속법 변경 핵심"
 date: "2026-01-02"
 excerpt: "구하라법의 뜻과 내용을 완벽하게 정리했습니다. 2026년 시행되는 상속법 개정 핵심 내용부터 적용 대상, 유류분 청구 배제까지 알아보세요."
-category: "life"
+category: "lifestyle"
 tags: ["구하라법", "상속법", "유류분", "상속권배제", "민법개정", "2026법개정", "상속", "부양의무", "유산상속", "법률"]
 imageUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200"
 author: "kimyido"

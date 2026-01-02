@@ -2,7 +2,7 @@
 title: "2026년 설날 연휴 일정 총정리, 대체공휴일 황금연휴 만들기"
 date: "2026-01-02"
 excerpt: "2026년 설날 연휴 일정을 완벽하게 정리했습니다. 대체공휴일 적용 여부, 황금연휴 만드는 법, 연차 활용 꿀팁까지 미리 계획 세우세요."
-category: "life"
+category: "lifestyle"
 tags: ["설날", "2026설날", "연휴", "대체공휴일", "황금연휴", "연차", "명절", "설연휴", "공휴일", "휴무일"]
 imageUrl: "https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200"
 author: "kimyido"

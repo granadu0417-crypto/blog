@@ -2,7 +2,7 @@
 title: "2026년 유망 자격증 추천 TOP 10, 취업에 도움되는 국가자격증 정리"
 date: "2026-01-02"
 excerpt: "2026년 취업에 유망한 자격증을 완벽하게 정리했습니다. IT, 금융, 안전 분야 국가자격증부터 AI 시대에 필요한 데이터 자격증까지 확인하세요."
-category: "life"
+category: "lifestyle"
 tags: ["자격증추천", "2026자격증", "국가자격증", "IT자격증", "취업자격증", "정보처리기사", "SQLD", "전기기사", "자격증시험", "취업준비"]
 imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200"
 author: "kimyido"

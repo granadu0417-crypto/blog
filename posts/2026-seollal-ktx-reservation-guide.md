@@ -2,7 +2,7 @@
 title: "2026년 설 KTX 예매 총정리, 날짜 시간 꿀팁 완벽 가이드"
 date: "2026-01-02"
 excerpt: "2026년 설 연휴 KTX 예매 정보를 완벽하게 정리했습니다. 예매 날짜, 시간, 꿀팁부터 대체 교통수단까지 귀성길 필수 정보를 확인하세요."
-category: "life"
+category: "lifestyle"
 tags: ["설KTX", "KTX예매", "설연휴", "기차표예매", "코레일", "SRT", "귀성길", "2026설", "명절예매", "기차여행"]
 imageUrl: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200"
 author: "kimyido"
