@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: "기술, 재테크, 건강, 라이프스타일 등 다양한 주제의 실용적인 정보를 공유하는 블로그",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "kimyido.com 블로그",
