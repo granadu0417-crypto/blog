@@ -1,7 +1,7 @@
 ---
 title: "BTS 2026 컴백 총정리, 3년 9개월만의 완전체 복귀 날짜 앨범 콘서트"
 date: "2026-01-02"
-excerpt: "BTS 방탄소년단 2026년 완전체 컴백 소식을 총정리했습니다. 3월 20일 컴백 날짜, 새 앨범 정보, 월드투어 콘서트 예상까지 아미라면 꼭 확인하세요."
+excerpt: "💜 드디어! BTS 3년 9개월만의 완전체 컴백 확정! 3월 20일 새 앨범 + 월드투어 예상 일정. 아미 필독! 티켓팅 준비하세요 [속보]"
 category: "entertainment"
 tags: ["BTS", "방탄소년단", "BTS컴백", "2026BTS", "방탄컴백", "BTS앨범", "BTS콘서트", "아미", "BTSARMY", "케이팝"]
 imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200"

@@ -4,7 +4,7 @@ date: "2026-01-02"
 excerpt: "2026년 새해 목표 세우는 방법을 완벽하게 정리했습니다. 작심삼일을 극복하는 과학적 방법부터 만다라트, 분기별 계획까지 목표 달성 전략을 알아보세요."
 category: "lifestyle"
 tags: ["새해목표", "2026계획", "목표달성", "작심삼일", "자기계발", "습관만들기", "만다라트", "신년계획", "생산성", "시간관리"]
-imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200"
+imageUrl: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=1200"
 author: "kimyido"
 ---
 

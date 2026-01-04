@@ -5,7 +5,7 @@ category: "tech"
 excerpt: "시간은 부족하고 할 일은 많으신가요? 노션, 슬랙, 트렐로부터 AI 도구까지. 직장인·프리랜서·학생 모두를 위한 생산성 앱 총정리와 활용 팁입니다."
 tags: ["생산성앱", "노션", "업무효율", "앱추천", "시간관리", "협업도구"]
 readTime: 16
-imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200"
+imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200"
 ---
 
 # 2025 생산성 앱 완벽 가이드 - 업무 효율 10배 높이는 필수 앱 15선

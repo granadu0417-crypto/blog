@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT 사용법 완벽 정리, 무료 이용부터 유료 플랜 차이까지"
 date: "2026-01-02"
-excerpt: "ChatGPT 사용법을 완벽하게 정리했습니다. 무료와 유료 버전 차이, GPT-4o와 GPT-5 모델 비교, 실무 활용 팁까지 한눈에 확인하세요."
+excerpt: "🤖 ChatGPT 무료로 GPT-4o 사용하는 방법! 유료 플랜 월 $20 결제 전 꼭 읽어보세요. 업무 시간 50% 단축하는 프롬프트 꿀팁까지"
 category: "tech"
 tags: ["ChatGPT", "인공지능", "AI활용", "GPT4", "GPT5", "챗GPT사용법", "AI도구", "생산성", "업무자동화", "프롬프트"]
 imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200"
