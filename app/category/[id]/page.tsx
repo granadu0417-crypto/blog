@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { getPostsByCategory, getAllPosts } from '@/lib/posts';
 import { getCategoryById, CATEGORY_IDS, getCategoryColorClass } from '@/lib/categories';
 import { notFound } from 'next/navigation';
+import { BreadcrumbSchema } from '@/components/StructuredData';
 
 interface CategoryPageProps {
   params: {
@@ -20,17 +21,39 @@ export async function generateStaticParams() {
 // 메타데이터 생성
 export async function generateMetadata({ params }: CategoryPageProps) {
   const category = getCategoryById(params.id);
-  
+
   if (!category) {
     return {
       title: '카테고리를 찾을 수 없습니다',
     };
   }
 
+  const categoryUrl = `https://kimyido.com/category/${params.id}/`;
+
   return {
-    title: `${category.name} - 블로그`,
-    description: category.description,
+    title: `${category.name} 관련 글 모음 | kimyido.com`,
+    description: `${category.description} ${category.name} 카테고리의 모든 글을 확인하세요.`,
     keywords: category.keywords.join(', '),
+    // 카테고리 페이지는 색인하지 않음 - 개별 포스트가 검색에 노출되도록
+    robots: {
+      index: false,
+      follow: true,  // 내부 링크는 따라감
+    },
+    openGraph: {
+      title: `${category.name} | kimyido.com`,
+      description: category.description,
+      url: categoryUrl,
+      type: 'website',
+      siteName: 'kimyido.com',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${category.name} | kimyido.com`,
+      description: category.description,
+    },
+    alternates: {
+      canonical: categoryUrl,
+    },
   };
 }
 
@@ -53,12 +76,27 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     index === self.findIndex((p) => p.slug === post.slug)
   );
 
+  // SEO: 게시글이 없는 카테고리는 실제 404 반환 (소프트 404 방지)
+  if (posts.length === 0) {
+    notFound();
+  }
+
   const bgColor = getCategoryColorClass(category.color, 'bg');
   const textColor = getCategoryColorClass(category.color, 'text');
   const borderColor = getCategoryColorClass(category.color, 'border');
 
+  const baseUrl = 'https://kimyido.com';
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* 구조화된 데이터 */}
+      <BreadcrumbSchema
+        items={[
+          { name: '홈', url: `${baseUrl}/` },
+          { name: category.name, url: `${baseUrl}/category/${params.id}/` },
+        ]}
+      />
+
       {/* 카테고리 헤더 */}
       <div className={`${bgColor} rounded-2xl p-8 mb-12 border-2 ${borderColor}`}>
         <div className="flex items-center gap-4 mb-4">
@@ -100,18 +138,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       {/* 게시글 목록 */}
-      {posts.length === 0 ? (
-        <div className="text-center py-20 bg-gray-50 rounded-lg">
-          <span className="text-6xl mb-4 block">{category.icon}</span>
-          <p className="text-gray-600 text-lg mb-2">
-            아직 {category.name} 카테고리의 게시글이 없습니다.
-          </p>
-          <p className="text-gray-500">
-            곧 유용한 콘텐츠가 업데이트될 예정입니다!
-          </p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => {
             const postCategory = getCategoryById(post.category);
             
@@ -125,7 +152,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   <div className="aspect-video overflow-hidden relative">
                     <Image
                       src={post.imageUrl}
-                      alt={post.title}
+                      alt={`${post.title} - ${category.name} 카테고리 게시글 이미지`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover hover:scale-105 transition-transform duration-300"
@@ -153,14 +180,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   )}
 
                   {/* 제목 */}
-                  <h3 className="text-xl font-bold mb-2 line-clamp-2">
-                    <Link 
-                      href={`/posts/${post.slug}`}
+                  <div className="text-xl font-bold mb-2 line-clamp-2">
+                    <Link
+                      href={`/posts/${post.slug}/`}
                       className="hover:text-blue-600 transition"
                     >
                       {post.title}
                     </Link>
-                  </h3>
+                  </div>
 
                   {/* 요약 */}
                   <p className="text-gray-600 mb-4 line-clamp-3">
@@ -192,8 +219,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </article>
             );
           })}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

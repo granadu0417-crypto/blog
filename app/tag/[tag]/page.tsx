@@ -1,8 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { getPostsByTag, getAllTags, getAllPosts } from '@/lib/posts';
 import { getCategoryById, getCategoryColorClass } from '@/lib/categories';
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/StructuredData';
+
+// SEO: 허브 페이지가 있는 카테고리 매핑
+const CATEGORY_HUB_MAP: Record<string, string> = {
+  finance: '/finance/',
+  realestate: '/realestate/',
+  stock: '/stock/',
+  health: '/health/',
+  test: '/test/',
+  travel: '/travel/',
+  tech: '/tech/',
+  education: '/education/',
+  lifestyle: '/lifestyle/',
+  shopping: '/shopping/',
+};
 
 interface TagPageProps {
   params: {
@@ -25,17 +41,44 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const tag = decodeURIComponent(params.tag);
   const posts = getPostsByTag(tag);
+  const tagUrl = `https://kimyido.com/tag/${encodeURIComponent(tag)}/`;
 
   return {
-    title: `#${tag} - 블로그`,
-    description: `${tag} 태그가 포함된 게시글 ${posts.length}개`,
+    title: `#${tag} 관련 글 ${posts.length}개 | kimyido.com`,
+    description: `${tag} 태그가 포함된 게시글 모음입니다. ${posts.length}개의 관련 콘텐츠를 확인하세요.`,
     keywords: [tag],
+    // 태그 페이지는 색인하지 않음 - 개별 포스트가 검색에 노출되도록
+    robots: {
+      index: false,
+      follow: true,  // 내부 링크는 따라감
+    },
+    openGraph: {
+      title: `#${tag} | kimyido.com`,
+      description: `${tag} 태그가 포함된 게시글 ${posts.length}개`,
+      url: tagUrl,
+      type: 'website',
+      siteName: 'kimyido.com',
+    },
+    twitter: {
+      card: 'summary',
+      title: `#${tag} | kimyido.com`,
+      description: `${tag} 태그가 포함된 게시글 ${posts.length}개`,
+    },
+    alternates: {
+      canonical: tagUrl,
+    },
   };
 }
 
 export default function TagPage({ params }: TagPageProps) {
   const tag = decodeURIComponent(params.tag);
   const posts = getPostsByTag(tag);
+  const baseUrl = 'https://kimyido.com';
+
+  // SEO: 게시글이 없는 태그는 실제 404 반환 (소프트 404 방지)
+  if (posts.length === 0) {
+    notFound();
+  }
 
   // 관련 태그 찾기 (현재 태그의 게시글에서 다른 태그들)
   const relatedTags = Array.from(
@@ -48,6 +91,14 @@ export default function TagPage({ params }: TagPageProps) {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* 구조화된 데이터 */}
+      <BreadcrumbSchema
+        items={[
+          { name: '홈', url: `${baseUrl}/` },
+          { name: `#${tag}`, url: `${baseUrl}/tag/${encodeURIComponent(tag)}/` },
+        ]}
+      />
+
       {/* 태그 헤더 */}
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-12 border-2 border-blue-200">
         <div className="flex items-center gap-4 mb-4">
@@ -95,18 +146,7 @@ export default function TagPage({ params }: TagPageProps) {
       </div>
 
       {/* 게시글 목록 */}
-      {posts.length === 0 ? (
-        <div className="text-center py-20 bg-gray-50 rounded-lg">
-          <span className="text-6xl mb-4 block">🏷️</span>
-          <p className="text-gray-600 text-lg mb-2">
-            #{tag} 태그를 가진 게시글이 없습니다.
-          </p>
-          <p className="text-gray-500">
-            곧 새로운 콘텐츠가 업데이트될 예정입니다!
-          </p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => {
             const category = getCategoryById(post.category);
             const bgColor = category ? getCategoryColorClass(category.color, 'bg') : 'bg-gray-100';
@@ -122,7 +162,7 @@ export default function TagPage({ params }: TagPageProps) {
                   <div className="aspect-video overflow-hidden relative">
                     <Image
                       src={post.imageUrl}
-                      alt={post.title}
+                      alt={`${post.title} - #${tag} 태그 관련 게시글 이미지`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover hover:scale-105 transition-transform duration-300"
@@ -144,10 +184,10 @@ export default function TagPage({ params }: TagPageProps) {
                 )}
 
                 <div className="p-6">
-                  {/* 카테고리 배지 */}
+                  {/* 카테고리 배지 - SEO: 허브 페이지로 연결 */}
                   {category && (
                     <Link
-                      href={`/category/${category.id}`}
+                      href={CATEGORY_HUB_MAP[category.id] || `/category/${category.id}/`}
                       className="inline-block mb-3"
                     >
                       <span className={`text-xs ${bgColor} ${textColor} px-2 py-1 rounded font-medium hover:opacity-80 transition`}>
@@ -157,14 +197,14 @@ export default function TagPage({ params }: TagPageProps) {
                   )}
 
                   {/* 제목 */}
-                  <h3 className="text-xl font-bold mb-2 line-clamp-2">
+                  <div className="text-xl font-bold mb-2 line-clamp-2">
                     <Link
-                      href={`/posts/${post.slug}`}
+                      href={`/posts/${post.slug}/`}
                       className="hover:text-blue-600 transition"
                     >
                       {post.title}
                     </Link>
-                  </h3>
+                  </div>
 
                   {/* 요약 */}
                   <p className="text-gray-600 mb-4 line-clamp-3">
@@ -198,7 +238,7 @@ export default function TagPage({ params }: TagPageProps) {
                         <span>{post.readTime}분</span>
                       )}
                       <Link
-                        href={`/posts/${post.slug}`}
+                        href={`/posts/${post.slug}/`}
                         className="text-blue-600 hover:text-blue-800 font-medium"
                       >
                         읽기 →
@@ -209,8 +249,7 @@ export default function TagPage({ params }: TagPageProps) {
               </article>
             );
           })}
-        </div>
-      )}
+      </div>
     </div>
   );
 }
